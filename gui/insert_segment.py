@@ -1,9 +1,11 @@
+import copy
 import tkinter as tk
 from tkinter import ttk, messagebox
 
 from core.classes.contatore import Contatore
 from core.classes.segmento import Segmento
 from core.tracciature import calculate
+from core.classes.misure_segmento import Misure_segmento
 
 
 class InsertSegment:
@@ -108,6 +110,21 @@ class InsertSegment:
                                                                                 self.n_max_busoni_alluminio, self.n_min_busoni_alluminio,
                                                                                 self.min_distanza_fine_sbarra_lato_busone,
                                                                                 self.max_distanza_fine_sbarra_lato_busone)
+            max_length = 0
+            key_select = -1
+            for key, value in self.lista_segmenti.items():
+                primary: int = next(iter(value))
+
+                if value[primary].segmento.l_esterna > max_length:
+                    max_length = value[primary].segmento.l_esterna
+                    key_select = key
+            tmp = copy.copy(self.lista_segmenti[0])
+            self.lista_segmenti[0] = self.lista_segmenti[key_select]
+            self.lista_segmenti[key_select] = tmp
+            for key, value in self.lista_segmenti[0].items():
+                value.segmento.id = 0
+            for key, value in self.lista_segmenti[key_select].items():
+                value.segmento.id = key_select
             self.back_to_main()
             messagebox.showinfo("Successo", "Segmento inserito con successo!")
         except ValueError:
