@@ -11,8 +11,8 @@ def main():
     n_min_busoni_acciaio = 1
     n_max_busoni_alluminio = 50
     n_min_busoni_alluminio = 1
-    min_distanza_fine_sbarra_lato_busone = 150
-    max_distanza_fine_sbarra_lato_busone = 200
+    min_distanza_fine_sbarra_lato_busone = 20
+    max_distanza_fine_sbarra_lato_busone = 30
     root = tk.Tk()
     contatore = Contatore()
     MainWindow(root, lista_segmenti, contatore, numero_misure_diverse,
