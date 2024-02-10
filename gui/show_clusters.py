@@ -58,34 +58,34 @@ class ShowClusters:
                     tmp_misura_primo_seg.distanza_muro == -1:
                 data = (
                     tmp_misura_primo_seg.segmento.id, tmp_misura_primo_seg.id_misura, tmp_misura_primo_seg.n_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_acciaio, tmp_misura_primo_seg.n_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_alluminio, "-", "-")
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_acciaio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_acciaio, 2), tmp_misura_primo_seg.n_busoni_alluminio,
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_alluminio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_alluminio, 2), "-", "-")
             elif tmp_misura_primo_seg.distanza_fine_sbarra_lato_busone != -1 and \
                     tmp_misura_primo_seg.distanza_muro == -1:
                 data = (
                     tmp_misura_primo_seg.segmento.id, tmp_misura_primo_seg.id_misura, tmp_misura_primo_seg.n_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_acciaio, tmp_misura_primo_seg.n_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_alluminio,
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_acciaio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_acciaio, 2), tmp_misura_primo_seg.n_busoni_alluminio,
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_alluminio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_alluminio, 2),
                     tmp_misura_primo_seg.distanza_fine_sbarra_lato_busone, "-")
             elif tmp_misura_primo_seg.distanza_fine_sbarra_lato_busone == -1 and \
                     tmp_misura_primo_seg.distanza_muro != -1:
                 data = (
                     tmp_misura_primo_seg.segmento.id, tmp_misura_primo_seg.id_misura, tmp_misura_primo_seg.n_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_acciaio, tmp_misura_primo_seg.n_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_alluminio, "-", tmp_misura_primo_seg.distanza_muro)
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_acciaio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_acciaio, 2), tmp_misura_primo_seg.n_busoni_alluminio,
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_alluminio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_alluminio, 2), "-", tmp_misura_primo_seg.distanza_muro)
             else:
                 data = (
                     tmp_misura_primo_seg.segmento.id, tmp_misura_primo_seg.id_misura, tmp_misura_primo_seg.n_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_acciaio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_acciaio, tmp_misura_primo_seg.n_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_centro_busoni_alluminio,
-                    tmp_misura_primo_seg.distanza_lato_busoni_alluminio,
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_acciaio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_acciaio, 2), tmp_misura_primo_seg.n_busoni_alluminio,
+                    round(tmp_misura_primo_seg.distanza_centro_busoni_alluminio, 2),
+                    round(tmp_misura_primo_seg.distanza_lato_busoni_alluminio, 2),
                     tmp_misura_primo_seg.distanza_fine_sbarra_lato_busone, tmp_misura_primo_seg.distanza_muro)
 
             table.insert("", tk.END, values=data)
@@ -93,25 +93,25 @@ class ShowClusters:
                 tmp: Misure_segmento = value2
                 if tmp.distanza_fine_sbarra_lato_busone == -1 and \
                         tmp.distanza_muro == -1:
-                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, tmp.distanza_centro_busoni_acciaio,
-                            tmp.distanza_lato_busoni_acciaio, tmp.n_busoni_alluminio,
-                            tmp.distanza_centro_busoni_alluminio, tmp.distanza_lato_busoni_alluminio, "-", "-")
+                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, round(tmp.distanza_centro_busoni_acciaio, 2),
+                            round(tmp.distanza_lato_busoni_acciaio, 2), tmp.n_busoni_alluminio,
+                            round(tmp.distanza_centro_busoni_alluminio, 2), round(tmp.distanza_lato_busoni_alluminio, 2), "-", "-")
                 elif tmp.distanza_fine_sbarra_lato_busone != -1 and \
                         tmp.distanza_muro == -1:
-                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, tmp.distanza_centro_busoni_acciaio,
-                            tmp.distanza_lato_busoni_acciaio, tmp.n_busoni_alluminio,
-                            tmp.distanza_centro_busoni_alluminio, tmp.distanza_lato_busoni_alluminio,
+                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, round(tmp.distanza_centro_busoni_acciaio, 2),
+                            round(tmp.distanza_lato_busoni_acciaio, 2), tmp.n_busoni_alluminio,
+                            round(tmp.distanza_centro_busoni_alluminio, 2), round(tmp.distanza_lato_busoni_alluminio, 2),
                             tmp.distanza_fine_sbarra_lato_busone, "-")
                 elif tmp.distanza_fine_sbarra_lato_busone == -1 and \
                         tmp.distanza_muro != -1:
-                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, tmp.distanza_centro_busoni_acciaio,
-                            tmp.distanza_lato_busoni_acciaio, tmp.n_busoni_alluminio,
-                            tmp.distanza_centro_busoni_alluminio, tmp.distanza_lato_busoni_alluminio, "-",
+                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, round(tmp.distanza_centro_busoni_acciaio, 2),
+                            round(tmp.distanza_lato_busoni_acciaio, 2), tmp.n_busoni_alluminio,
+                            round(tmp.distanza_centro_busoni_alluminio, 2), round(tmp.distanza_lato_busoni_alluminio, 2), "-",
                             tmp.distanza_muro)
                 else:
-                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, tmp.distanza_centro_busoni_acciaio,
-                            tmp.distanza_lato_busoni_acciaio, tmp.n_busoni_alluminio,
-                            tmp.distanza_centro_busoni_alluminio, tmp.distanza_lato_busoni_alluminio,
+                    data = (tmp.segmento.id, tmp.id_misura, tmp.n_busoni_acciaio, round(tmp.distanza_centro_busoni_acciaio, 2),
+                            round(tmp.distanza_lato_busoni_acciaio, 2), tmp.n_busoni_alluminio,
+                            round(tmp.distanza_centro_busoni_alluminio, 2), round(tmp.distanza_lato_busoni_alluminio, 2),
                             tmp.distanza_fine_sbarra_lato_busone, tmp.distanza_muro)
 
                 table.insert("", tk.END, values=data)
@@ -189,6 +189,7 @@ class ShowClusters:
         for key, value in cluster_i.items():
             segmento: Misure_segmento = lista_segmenti[key][value.id_misura]
             lista_buchi: list[float] = calcola_buchi(segmento)
+            lista_buchi = [round(n, 2) for n in lista_buchi]
             data = (key, value.id_misura,) + tuple(lista_buchi)
             tree.insert("", tk.END, values=data)
         tree.pack(fill=tk.BOTH, expand=True)
